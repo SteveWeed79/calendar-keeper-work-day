@@ -10,7 +10,7 @@ var testOne = document.getElementsByClassName("input-group-text").textContent;
 $(document).ready(function () {
     $("button").click(function () {
         alert("The button worked!");
-        alert($("#todoText").text());
+        alert($("#nineAMtest").text());
     });
 });
 
@@ -18,7 +18,7 @@ function printTime() {
     timeHero.textContent = timeNow;
     console.log(now)
     console.log(testOne)
-    document.getElementById("nineAMtext").innerHTML = now;
+    document.getElementById("nineAM").textContent = now;
     //document.getElementsByClassName("test").textContent = now;
 
     if (nineAM === now) {
