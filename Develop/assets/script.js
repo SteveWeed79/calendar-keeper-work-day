@@ -5,7 +5,6 @@ const textAreaToColor = document.getElementById("nineAMtext")
 var timeChange = moment().format("H A");
 var testOne = document.getElementsByClassName("input-group-text").textContent;
 var dayPlan = [];
-var buttonTrue = false
 var localStorageEl = JSON.parse(localStorage.getItem("dayPlan"));
 
 
@@ -16,7 +15,7 @@ $(document).ready(function () {
             .val()
         console.log(value)
 
-        buttonTrue = true;
+
 
         var timeId = $(this)
             .siblings('.textarea')
@@ -25,26 +24,27 @@ $(document).ready(function () {
         dayPlan.push({
             timeId,
             text: value,
-            buttonTrue: buttonTrue,
+
         });
 
         localStorage.setItem("dayPlan", JSON.stringify(dayPlan));
+
+
 
         console.log("the button worked");
         console.log(value);
         console.log(timeId);
         console.log(dayPlan);
-        console.log(localStorageEl);
-        console.log(localStorageEl[buttonTrue]);
+        console.log(localStorageEl[1]);
+
 
     });
 });
 
 
-
-
 function printTime() {
     timeHero.textContent = timeNow;
+    $("#hour-9 .description").val(localStorage.getItem("hour-9"));
 }
 
 
