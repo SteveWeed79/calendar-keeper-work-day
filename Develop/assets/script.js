@@ -8,6 +8,16 @@ var dayPlan = [];
 var localStorageEl = JSON.parse(localStorage.getItem("dayPlan"));
 
 
+
+document.addEventListener('click', function (e) {
+    if (e.target.tagName == "BUTTON") {
+        alert('BUTTON CLICKED');
+        this.getElementById('hour-9').textContent = localStorageEl[1]
+    }
+})
+
+
+
 $(document).ready(function () {
     $("button").on("click", function () {
         var value = $(this)
@@ -23,7 +33,7 @@ $(document).ready(function () {
 
         dayPlan.push({
             timeId,
-            text: value,
+            textEl: value,
 
         });
 
@@ -42,10 +52,27 @@ $(document).ready(function () {
 });
 
 
+
 function printTime() {
     timeHero.textContent = timeNow;
-    $("#hour-9 .description").val(localStorage.getItem("hour-9"));
-}
+    let testEl = localStorage.getItem("dayPlan");
+    let obj = JSON.parse(testEl);
+    document.getElementById('hour-9').textContent = obj.textEl;
+    console.log(timeChange);
+
+    $("#nineAM,#tenAM,#elevenAm,#twelvePM,#onePM,#twoPM,#threePM,#fourPM,#fivePM").each(function () {
+        if (this == now) {
+            document.getElementsByClassName(textarea).setAttribute("class", "present");
+        } else if (this >= now) {
+            document.getElementsByClassName(textarea).setAttribute("class", "future");
+        } else {
+            document.getElementsByClassName(textarea).setAttribute("class", "past");
+        }
+        //$("#hour-9 .description").val(localStorage.getItem("hour-9", "text"));
+
+    });
+
+};
 
 
 //if ( testOne === now) {
