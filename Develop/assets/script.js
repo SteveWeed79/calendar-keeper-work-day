@@ -1,17 +1,11 @@
 var now = moment().format("H");
 var timeNow = moment().format("dddd, MMMM Do @ H:MM A");
 const timeHero = document.getElementById("currentDay");
-var testOne = document.getElementsByClassName("input-group-text").textContent;
-var dayPlan = [];
-var localStorageEl = JSON.parse(localStorage.getItem("dayPlan"));
 
 
 
-document.addEventListener('click', function (e) {
-    if (e.target.tagName == "BUTTON") {
-        this.getElementById('hour-9').textContent = localStorageEl[1]
-    }
-})
+document.addEventListener('click', function (e) {})
+  
 
 
 $(document).ready(function () {
@@ -29,6 +23,7 @@ $(document).ready(function () {
     });
 });
 
+
 $("#hour-9").val(localStorage.getItem("hour-9")); 
 $("#hour-10").val(localStorage.getItem("hour-10")); 
 $("#hour-11").val(localStorage.getItem("hour-11")); 
@@ -38,6 +33,7 @@ $("#hour-14").val(localStorage.getItem("hour-14"));
 $("#hour-15").val(localStorage.getItem("hour-15")); 
 $("#hour-16").val(localStorage.getItem("hour-16")); 
 $("#hour-17").val(localStorage.getItem("hour-17")); 
+
 
 function printTime() {
     timeHero.textContent = timeNow;
