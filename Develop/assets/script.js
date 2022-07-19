@@ -1,12 +1,10 @@
 var now = moment().format("H");
-var timeNow = moment().format("dddd, MMMM Do @ H:MM A");
+var timeNow = moment().format("dddd, MMMM Do");
 const timeHero = document.getElementById("currentDay");
-
 
 
 document.addEventListener('click', function (e) {})
   
-
 
 $(document).ready(function () {
     $("button").on("click", function () {
